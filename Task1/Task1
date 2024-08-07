@@ -1,0 +1,41 @@
+//Fuzetek Academy
+//Esraa Yasser
+//task name : bitwise manipulation and cicular shift in C
+	
+#include <stdio.h>
+    int main(){
+	 //set bit 
+	 unsigned char num1 = 0b00001111;	 //num1=15 
+	 //set bit position 4
+	 num1 = (num1 | (1<<4));
+	 printf("output of set bit=%p\n",num1); //Expected output: num1=0b0001 1111 = 0x1F =31
+//*********************************************************************************
+  //Clear bit position 5 
+   unsigned char num2 = 0b11111111; // num2=255
+   num2 = (num2 & ~(1<<5));
+   printf("output of clear bit=%p\n",num2); //Expected output: num2=0b1101 1111 = 0xDF=223
+   //*******************************************************************************
+	//Toggle bit postion 6
+	 unsigned char num3 = 0b01010101; // num3=85
+	 num3 = (num3  ^(1<<6));
+	 printf("output of Toggle bit=%p\n",num3); //Expected output: num3=0b0001 0101 = 0x15 =21
+   //********************************************************************************
+	//Read bit position 4
+	unsigned char num4 = 0b00110101; // num4=53
+	num4 =  (num4 & (1<<4)) >>4 ;
+	 printf("output of Read bit=%p\n",num4); //Expected output: num4=0b0000 0001 =1 = 0x1
+	 //******************************************************************************
+	 //Circular shift left by 3
+	 	unsigned char num5 = 0b01110101; // num5=117
+		num5= (num5<<3)|(num5>>5);
+		 printf("output of cicular shift left=%p\n",num5); //Expected output: num5=0b1010 1011 = 0xAB =171
+		
+	 //***********************************************************************************************
+	 //Circular shift Right by 3
+	 	unsigned char num6 = 0b01110101; // num6=117
+		num6= (num6>>3)|(num6<<5);
+		 printf("output of cicular shift Right=%p\n",num6); //Expected output: num6=0b1010 1110 = 0xAE =174
+		 
+	 
+	return 0 ;
+}
